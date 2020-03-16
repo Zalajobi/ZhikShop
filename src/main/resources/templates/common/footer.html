@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Wish shop project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/responsive.css}">
+</head>
+<body>
+    <div th:fragment="footer">
+        <!-- Footer -->
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center">
+                        <div class="footer_logo"><a href="#">ZHIK SHOP</a></div>
+                        <nav class="footer_nav">
+                            <ul>
+                                <li><a href="/zhik.ng" th:href="@{/zhik.ng}">HOME</a></li>
+                                <li><a href="categories.html">OUR SERVICES</a></li>
+                                <li><a href="/aboutus" th:href="@{/aboutus}">ABOUT US</a></li>
+                                <li><a href="categories.html">FAQ</a></li>
+                                <li><a href="/contactus" th:href="@{/contactus}">CONTACT</a></li>
+                            </ul>
+                        </nav>
+                        <div class="footer_social">
+                            <ul>
+                                <li><a href="https://www.facebook.com/igbalajobi.zhikrullah" target="_blank"><img th:src="@{Media/Image/Home/facebook.ico}"></a></li>
+                                <li><a href="https://www.linkedin.com/in/zhikrullah-igbalajobi-b32aa5166/" target="_blank"><img th:src="@{Media/Image/Home/linkedin.ico}"></a></li>
+                                <li><a href="https://www.instagram.com/zalajobi/" target="_blank"><img th:src="@{Media/Image/Home/instagram.ico}"></a></li>
+                                <li><a href="https://twitter.com/Zalajobi" target="_blank"><img th:src="@{Media/Image/Home/twitter.ico}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

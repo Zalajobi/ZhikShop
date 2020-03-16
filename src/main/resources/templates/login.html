@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Wish shop project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css" media="all" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/font/font-awesome.min.css" media="all" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/owl.carousel.css" media="all" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/owl.theme.default.css" media="all" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/animate.css" media="all" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/colorbox.css" media="all" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/main_styles.css" media="all" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/responsive.css" media="all" th:href="@{css/responsive.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.css" th:href="@{css/bootstrap/bootstrap.css}" media="all">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/login/validify.css" th:href="@{css/login/validify.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/login/style.css" th:href="@{css/login/style.css}">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/css/login/main-style.css" th:href="@{css/login/main-style.css}">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"  type="text/css" media="all">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Montserrat:400,700"	type="text/css" media="all">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"	type="text/css" media="all">
+</head>
+<body style="width: 100%; height: 1231px" th:style="'${width: 100%; height: 1231px}'">
+    <div class="super_container" th:style="'background-image: url(Media/Image/Home/bg.jpg); background-repeat:no-repeat; background-size:cover;'">
+        <div th:replace="common/header::navbar"></div>
+        <div th:replace="common/header::menu"></div>
+
+        <div class="containerw3layouts-agileits">
+            <h1 class="text-hide">hello</h1>
+            <h1 class="text-uppercase">log in</h1>
+
+            <form th:action="@{/login}" method="post" action="/login">
+                <div class="form-group agileits-w3layouts">
+                    <input type="email" class="form-control agileinfo textbox" id="email" name="email" required placeholder="Email">
+                </div>
+                <div class="form-group w3-agile password">
+                    <input type="password" class="form-control w3-agileits textbox" id="passwprd" required placeholder="Password">
+                </div>
+                <button type="submit" id="submit" class="submit_button">Log In</button>
+<!--                <div class="alert agileits-w3layouts alert-suc  cess hidden" role="alert">Login Successful!</div>-->
+            </form>
+            <h1 class="text-hide">hello</h1>
+        </div>
+    </div>
+    <div th:replace="common/footer::footer"></div>
+    <div th:replace="common/header::scripts"></div>
+    <script src="/static/js/login/jquery.min.js" th:src="@{js/login/jquery.min.js}"></script>
+    <script src="/static/js/login/validify.js" th:src="@{js/login/validify.js}"></script>
+    <script>
+        $("#demo").validify({
+            onSubmit: function (e, $this) {
+                $this.find('.alert').removeClass('hidden')
+            },
+            onFormSuccess: function (form) {
+                console.log("Form is valid now!")
+            },
+            onFormFail: function (form) {
+                console.log("Form is not valid :(")
+            }
+        });
+    </script>
+</body>
+</html>

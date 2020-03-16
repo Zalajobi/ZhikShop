@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Wish shop project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap/bootstrap.min.css" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/font/font-awesome.min.css" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/owl.carousel.css" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/owl.theme.default.css" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/animate.css" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/plugins/colorbox.css" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/main_styles.css" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" type="text/css" href="/static/css/responsive.css" th:href="@{css/responsive.css}">
+</head>
+<body>
+    <div th:fragment="navbar">
+        <!-- Header -->
+
+        <header class="header">
+            <div class="header_inner d-flex flex-row align-items-center justify-content-start">
+                <div class="logo"><a href="/zhik.ng">ZHIK SHOP</a></div>
+                <nav class="main_nav">
+                    <ul>
+                        <li><a href="/zhik.ng" th:href="@{/zhik.ng}">home</a></li>
+                        <li><a href="categories.html">our services</a></li>
+                        <li><a href="/aboutus" th:href="@{/aboutus}">about us</a></li>
+                        <li><a href="contact.html">faq</a></li>
+                        <li><a href="/contactus" th:href="@{/contactus}">contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header_content ml-auto">
+                    <div class="search header_search">
+                        <form action="#">
+                            <input type="search" class="search_input" required="required">
+                            <button type="submit" id="search_button" class="search_button"><img th:src="@{Media/Image/Header/magnifying-glass.svg}" alt=""></button>
+                        </form>
+                    </div>
+                    <div class="shopping">
+                        <!-- Cart -->
+                        <a href="#">
+                            <div class="cart">
+                                <img th:src="@{Media/Image/Header/shopping-cart.png}" src="/static/Media/Image/Header/shopping-cart.png" alt="">
+                                <div class="cart_num_container">
+                                    <div class="cart_num_inner">
+                                        <!--                                    make it fet user data and items in the cart the count-->
+                                        <div class="cart_num">1</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Star -->
+                        <a href="#">
+                            <div class="star">
+                                <img th:src="@{Media/Image/Header/star.svg}" src="/static/Media/Image/Header/star.svg" alt="">
+                                <div class="star_num_container">
+                                    <div class="star_num_inner">
+                                        <div class="star_num">0</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <!-- Avatar -->
+                        <a href="#">
+                            <div class="avatar">
+                                <img th:src="@{Media/Image/Header/avatar.svg}" src="/static/Media/Image/Header/avatar.svg" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
+            </div>
+        </header>
+    </div>
+
+    <div th:fragment="menu">
+        <!-- Menu -->
+        <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+            <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+            <div class="logo menu_mm"><a href="#">Wish</a></div>
+            <div class="search">
+                <form action="#">
+                    <input type="search" class="search_input menu_mm" required="required">
+                    <button type="submit" id="search_button_menu" class="search_button menu_mm"><img class="menu_mm" src="images/magnifying-glass.svg" alt=""></button>
+                </form>
+            </div>
+            <nav class="menu_nav">
+                <ul class="menu_mm">
+                    <li class="menu_mm"><a href="#">phones and tablets</a></li>
+                    <li class="menu_mm"><a href="#">computing</a></li>
+                    <li class="menu_mm"><a href="#">electronics</a></li>
+                    <li class="menu_mm"><a href="#">home and office</a></li>
+                    <li class="menu_mm"><a href="#">fashion</a></li>
+                    <li class="menu_mm"><a href="#">health and beauty</a></li>
+                    <li class="menu_mm"><a href="#">gaming</a></li>
+                    <li class="menu_mm"><a href="#">grocery</a></li>
+                    <li class="menu_mm"><a href="#">baby products</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div th:fragment="scripts">
+        <script th:src="@{js/jquery-3.2.1.min.js}"></script>
+        <script th:src="@{js/bootstrap/popper.js}"></script>
+        <script th:src="@{js/bootstrap/bootstrap.min.js}"></script>
+        <script th:src="@{js/plugin/owl.carousel.js}"></script>
+        <script th:src="@{js/plugin/easing.js}"></script>
+        <script th:src="@{js/plugin/parallax.min.js}"></script>
+        <script th:src="@{js/jquery.colorbox-min.js}"></script>
+        <script th:src="@{js/custom.js}"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css" type="text/css" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" href="/static/css/font/font-awesome.min.css" type="text/css" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" href="/static/css/plugins/owl.carousel.css" type="text/css" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" href="/static/css/plugins/owl.theme.default.css" type="text/css" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" href="/static/css/plugins/animate.css" type="text/css" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" href="/static/css/plugins/colorbox.css" type="text/css" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" href="/static/css/main_styles.css" type="text/css" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" href="/static/css/responsive.css" type="text/css" th:href="@{css/responsive.css}">
+    <link rel="stylesheet" href="/static/css/contact/util.css" th:href="@{css/contact/util.css}">
+    <link rel="stylesheet" href="/static/css/contact/main.css" th:href="@{css/contact/main.css}">
+    <link rel="stylesheet" href="/static/css/font/material-design-iconic-font.min.css" th:href=" @{css/font/material-design-iconic-font.min.css}">
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}">
+</head>
+<body>
+<div class="super_container">
+    <div th:replace="common/header::navbar"></div>
+    <div th:replace="common/header::menu"></div>
+
+    <section class="bgwhite p-t-66 p-b-60">
+        <div>
+            <div th:style="'background-image: url(Media/Image/Home/plant.png); background-repeat:no-repeat; background-size:cover;'">
+                <div class="form-wrapper-container">
+                    <div class="inner align-content-center">
+                        <form th:action="@{/addproduct}" action="/addproduct" th:method="post" method="post" th:object="${addProduct}" enctype="multipart/form-data">
+                            <h3 class="m-text26 p-b-36 p-t-15">
+                                Product Details
+                            </h3>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="name">Name</label>
+                                <input class="form-control" th:field="*{productName}" id="name" type="text" name="name" placeholder="Name">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <select class="text-black text-uppercase form-control" th:field="*{productCategory}" name="product">
+                                    <option class="text-black text-uppercase" value="Selected" th:value="Selected" selected>Category</option>
+                                    <option class="text-black text-uppercase" th:each="productCategoryList : ${T(zhikrullah.online.shop.Model.Enums.ProductCategory).values()}"
+                                            th:value="${productCategoryList}" th:text="${productCategoryList.displayValue}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="condition">Condition</label>
+                                <input class="form-control" th:field="*{productCondition}" id="condition" type="text" name="name" placeholder="Condition">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="status">Status</label>
+                                <input class="form-control" id="status" th:field="*{productStatus}" type="text" name="name" placeholder="Status">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="manufacturer">Manufacturer</label>
+                                <input class="form-control" id="manufacturer" th:field="*{productManufacturer}" type="text" name="name" placeholder="Manufacturer">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="price">Price</label>
+                                <input class="form-control" th:field="*{productPrice}" type="number" name="name" id="price" placeholder="Price">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <label class="text-black text-uppercase" for="Quantity">Quantity</label>
+                                <input class="form-control" th:field="*{unitInStock}" type="text" name="name" id="quantity" placeholder="Unit In Stock">
+                            </div>
+
+                            <div class="form-wrapper">
+                                <textarea class="text-black text-uppercase form-control-plaintext" id="description" rows="10" cols="100" th:field="*{productDescription}" name="message" placeholder="Description"></textarea>
+                            </div>
+
+                            <div class="form-wrapper">
+                                <input class="form-control" type="file" name="files" placeholder="Image(s)" multiple>
+                            </div>
+
+                            <div class="w-size25">
+                                <button type="submit" class="submit_button">
+                                    Send
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div th:replace="common/footer::footer"></div>
+</div>
+<div th:replace="common/header::scripts"></div>
+</body>
+</html>

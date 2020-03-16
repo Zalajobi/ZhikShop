@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css" type="text/css" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" href="/static/css/font/font-awesome.min.css" type="text/css" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" href="/static/css/plugins/owl.carousel.css" type="text/css" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" href="/static/css/plugins/owl.theme.default.css" type="text/css" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" href="/static/css/plugins/animate.css" type="text/css" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" href="/static/css/plugins/colorbox.css" type="text/css" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" href="/static/css/main_styles.css" type="text/css" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" href="/static/css/responsive.css" type="text/css" th:href="@{css/responsive.css}">
+    <link rel="stylesheet" href="/static/css/font/material-design-iconic-font.min.css" th:href=" @{css/font/material-design-iconic-font.min.css}">
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{css/style.css}">
+</head>
+
+<body>
+
+<div class="super_container">
+    <div th:replace="common/header::navbar"></div>
+    <div th:replace="common/header::menu"></div>
+    <div th:style="'background-image: url(Media/Image/Home/123.jpg); background-repeat:no-repeat; background-size:cover;'">
+        <div class="form-wrapper-container">
+            <div class="inner">
+                <form th:action="@{/register}" action="/signup" th:method="post" method="post" th:object="${reg}">
+                    <h3 class="text-uppercase">Registration Form</h3>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-dark text-uppercase" for="firstName">First Name</label>
+                            <input type="text" th:field="*{firstName}" id="firstName" class="form-control">
+                            <div class="text text-danger" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">
+                                <p class="text-danger">PLEASE ENTER A VALID STRING VALUE</p>
+                            </div>
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="lastName">Last Name</label>
+                            <input type="text" th:field="*{lastName}" id="lastName" class="form-control">
+                            <div class="text text-danger" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
+                                <p class="text-danger">PLEASE ENTER A VALID STRING VALUE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="otherName">Other Name</label>
+                            <input type="text" th:field="*{otherName}" id="otherName" class="form-control">
+                            <div class="text text-danger" th:if="${#fields.hasErrors('otherName')}" th:errors="*{otherName}">
+                                <p class="text-danger">PLEASE ENTER A VALID STRING VALUE</p>
+                            </div>
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="email">Email</label>
+                            <input type="email" th:field="*{email}" id="email" class="form-control">
+                            <div class="text text-danger" th:if="${emailExist}" th:errors="*{email}">
+                                <p class="text-danger">EMAIL ADDRESS ALREADY IN USE</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="userName">User Name</label>
+                            <input class="form-control" th:field="*{userName}" id="userName" type="text">
+                            <div class="text text-danger" th:if="${user_NameExist}" th:errors="*{userName}">
+                                <p class="text-danger">USERNAME ALREADY IN USE</p>
+                            </div>
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="gender">Gender</label>
+                            <select th:field="*{gender}" id="gender" class="custom-select form-control" name="product">
+                                <option value=" ">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Trans-Gender">Transgender</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="dateOfBirth">Date of Birth</label>
+                            <input type="date" th:field="*{dateOfBirth}" class="form-control" id="dateOfBirth">
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="phoneNumber">Phone Number</label>
+                            <input type="number" th:field="*{phoneNumber}" class="form-control" id="phoneNumber">
+                            <div class="text text-danger" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">
+                                <p class="text-danger">PLEASE ENTER A VALID PHONE NUMBER</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="country">Country</label>
+                            <select th:field="*{country}" id="country" class="custom-select form-control" name="product">
+                                <option value="Selected" th:value="Selected" selected>Country</option>
+                                <option th:each="countries : ${T(zhikrullah.online.shop.Model.Enums.Countries).values()}"
+                                        th:value="${countries}" th:text="${countries.countries}"></option>
+                            </select>
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="region">Region</label>
+                            <input class="form-control" th:field="*{region}" id="region" type="text">
+                            <div class="text text-danger" th:if="${#fields.hasErrors('region')}" th:errors="*{region}">
+                                <p class="text-danger">PLEASE ENTER A VALID REGION</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="password">Password</label>
+                            <input th:field="*{password}" id="password" type="password" class="form-control" name="password" onchange="check_pass();">
+                        </div>
+                        <div class="form-wrapper">
+                            <label class="text-uppercase text-dark" for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" onchange="check_pass();">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input class="text-dark" type="checkbox"> I accept the Terms of Use & Privacy Policy.
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <button type="submit" id="submit" class="submit_button">Register Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div th:replace="common/footer::footer"></div>
+</div>
+<script>
+    function check_pass() {
+        if (document.getElementById('password').value ==
+            document.getElementById('confirmPassword').value) {
+            document.getElementById('submit').disabled = false;
+        } else {
+            document.getElementById('submit').disabled = true;
+        }
+    }
+</script>
+<div th:replace="common/header::scripts"></div>
+</body>
+</html>

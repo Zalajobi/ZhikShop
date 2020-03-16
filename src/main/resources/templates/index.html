@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Wish shop project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zhik Shop</title>
+    <link rel="icon" type="image/png" th:href="@{Media/Image/Logo/logo_transparent.png}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/bootstrap/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/font/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/owl.carousel.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/owl.theme.default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/animate.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/plugins/colorbox.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/main_styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{css/responsive.css}">
+</head>
+<body>
+
+<div class="super_container">
+    <div th:replace="common/header::navbar"></div>
+    <div th:replace="common/header::menu"></div>
+
+    <!-- Home -->
+
+    <div class="home">
+
+        <!-- Home Slider -->
+
+        <div class="home_slider_container">
+            <div class="owl-carousel owl-theme home_slider">
+
+                <!-- Home Slider Item -->
+                <div class="owl-item">
+                    <div class="home_slider_background" th:style="'background-image: url(Media/Image/Home/imac-1999636_1280.jpg); no-repeat; center; center; cover'"></div>
+                    <div class="home_slider_content">
+                        <div class="home_slider_content_inner">
+                            <div class="home_slider_subtitle">BEST OF TECHNOLOGY</div>
+                            <div class="home_slider_title">Shop Now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Slider Item -->
+                <div class="owl-item">
+                    <div class="home_slider_background" th:style="'background-image: url(Media/Image/Home/three-3075752_1920.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+                    <div class="home_slider_content">
+                        <div class="home_slider_content_inner">
+                            <div class="home_slider_subtitle">WOMEN FASHION</div>
+                            <div class="home_slider_title">shop now</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Home Slider Item -->
+                <div class="owl-item">
+                    <div class="home_slider_background" th:style="'background-image: url(Media/Image/Home/model-1246028_1920.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+                    <div class="home_slider_content">
+                        <div class="home_slider_content_inner">
+                            <div class="home_slider_subtitle">MEN FASHION</div>
+                            <div class="home_slider_title">shop now</div>
+                        </div>
+                    </div>
+                </div>
+
+<!--                 Home Slider Item-->
+                <div class="owl-item">
+                    <div class="home_slider_background" th:style="'background-image: url(Media/Image/Home/farmers-1311017_1920.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+                    <div class="home_slider_content">
+                        <div class="home_slider_content_inner">
+                            <div class="home_slider_subtitle">EXPLORE OUR GROCERY STORE</div>
+                            <div class="home_slider_title">shop now</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+<!--            &lt;!&ndash; Home Slider Nav &ndash;&gt;-->
+
+<!--            <div class="home_slider_next d-flex flex-column align-items-center justify-content-center"><img th:src="@{Media/Image/Home/icons8-arrow-50.png}" alt=""></div>-->
+
+            <!-- Home Slider Dots -->
+
+            <div class="home_slider_dots_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_slider_dots">
+                                <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                    <li class="home_slider_custom_dot active">01.<div></div></li>
+                                    <li class="home_slider_custom_dot">02.<div></div></li>
+                                    <li class="home_slider_custom_dot">03.<div></div></li>
+                                    <li class="home_slider_custom_dot">04.<div></div></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promo -->
+
+    <div class="promo">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container text-center">
+                        <div class="section_subtitle">only the best</div>
+                        <div class="section_title">promo prices</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row promo_container">
+
+                <!-- Promo Item -->
+                <div class="col-lg-4 promo_col">
+                    <div class="promo_item">
+                        <div class="promo_image">
+                            <img th:src="@{Media/Image/Home/promo_1.jpg}" alt="">
+                            <div class="promo_content promo_content_1">
+                                <div class="promo_title">-30% off</div>
+                                <div class="promo_subtitle">on all bags</div>
+                            </div>
+                        </div>
+                        <div class="promo_link"><a href="#">Shop Now</a></div>
+                    </div>
+                </div>
+
+                <!-- Promo Item -->
+                <div class="col-lg-4 promo_col">
+                    <div class="promo_item">
+                        <div class="promo_image">
+                            <img th:src="@{Media/Image/Home/promo_2.jpg}" alt="">
+                            <div class="promo_content promo_content_2">
+                                <div class="promo_title">-30% off</div>
+                                <div class="promo_subtitle">coats & jackets</div>
+                            </div>
+                        </div>
+                        <div class="promo_link"><a href="#">Shop Now</a></div>
+                    </div>
+                </div>
+
+                <!-- Promo Item -->
+                <div class="col-lg-4 promo_col">
+                    <div class="promo_item">
+                        <div class="promo_image">
+                            <img th:src="@{Media/Image/Home/promo_3.jpg}" alt="">
+                            <div class="promo_content promo_content_3">
+                                <div class="promo_title">-25% off</div>
+                                <div class="promo_subtitle">on Sandals</div>
+                            </div>
+                        </div>
+                        <div class="promo_link"><a href="#">Shop Now</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Best Sellers -->
+
+    <div class="arrivals">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container text-center">
+                        <div class="section_subtitle">only the best</div>
+                        <div class="section_title">best sellers</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row products_container">
+
+                <!-- Product -->
+                <div class="col-lg-4 product_col">
+                    <div class="product">
+                        <div class="product_image">
+                            <img th:src="@{Media/Image/Home/product_1.jpg}" src="/static/Media/Image/Home/product_1.jpg"  alt="">
+                        </div>
+                        <div class="rating rating_4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product_content clearfix">
+                            <div class="product_info">
+                                <div class="product_name"><a href="product.html">Woman's Long Dress</a></div>
+                                <div class="product_price">#2,359</div>
+                            </div>
+                            <div class="product_options">
+                                <div class="product_buy product_option"><img src="/static/Media/Image/Home/shopping-bag-white.svg" th:src="@{Media/Image/Home/shopping-bag-white.svg}" alt=""></div>
+                                <div class="product_fav product_option">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="col-lg-4 product_col">
+                    <div class="product">
+                        <div class="product_image">
+                            <img src="/static/Media/Image/Home/product_2.jpg" th:src="@{Media/Image/Home/product_2.jpg}" alt="">
+                        </div>
+                        <div class="rating rating_4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product_content clearfix">
+                            <div class="product_info">
+                                <div class="product_name"><a href="product.html">2 Piece Swimsuit</a></div>
+                                <div class="product_price">#3,500</div>
+                            </div>
+                            <div class="product_options">
+                                <div class="product_buy product_option"><img src="/static/Media/Image/Home/shopping-bag-white.svg" th:src="@{Media/Image/Home/shopping-bag-white.svg}" alt=""></div>
+                                <div class="product_fav product_option">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="col-lg-4 product_col">
+                    <div class="product">
+                        <div class="product_image">
+                            <img src="/static/Media/Image/Home/product_3.jpg" th:src="@{Media/Image/Home/product_3.jpg}" alt="">
+                        </div>
+                        <div class="rating rating_4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="product_content clearfix">
+                            <div class="product_info">
+                                <div class="product_name"><a href="product.html">Man Blue Jacket</a></div>
+                                <div class="product_price">#7,300</div>
+                            </div>
+                            <div class="product_options">
+                                <div class="product_buy product_option"><img src="/static/Media/Image/Home/shopping-bag-white.svg" th:src="@{Media/Image/Home/shopping-bag-white.svg}" alt=""></div>
+                                <div class="product_fav product_option">+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Extra -->
+
+    <div class="extra clearfix">
+        <div class="extra_promo extra_promo_1">
+            <div class="extra_promo_image" th:style="'background-image: url(Media/Image/Home/shoes.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+            <div class="extra_1_content d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="extra_1_price">30%<span>off</span></div>
+                <div class="extra_1_title">On all shoes</div>
+                <div class="extra_1_text">Get 30% discount on all male, female and unisex shoes.
+                    Offer valid while stock last</div>
+                <div class="button extra_1_button"><a href="checkout.html">SHOP</a></div>
+            </div>
+        </div>
+        <div class="extra_promo extra_promo_2">
+            <div class="extra_promo_image" th:style="'background-image: url(Media/Image/Home/extra.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+            <div class="extra_2_content d-flex flex-column align-items-center justify-content-center text-center">
+                <div class="extra_2_title">
+                    <div class="extra_2_center">&</div>
+                    <div class="extra_2_top">Mix</div>
+                    <div class="extra_2_bottom">Match</div>
+                </div>
+                <div class="extra_2_text">Browse through our collection of carefully matched outfits</div>
+                <div class="button extra_2_button"><a href="checkout.html">check out</a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery -->
+
+    <div class="gallery">
+        <div class="gallery_image" th:style="'background-image: url(Media/Image/Home/homeslider.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="gallery_title text-center">
+                        <ul>
+                            <li><a href="#"></a></li>
+                            <li><a href="#">ZHIK SHOP</a></li>
+                            <li><a href="#"></a></li>
+                        </ul>
+                    </div>
+                    <div class="gallery_text text-center section_title">OUR GALLERY</div>
+                    <div class="button gallery_button"><a href="#">submit</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery_slider_container">
+
+            <!-- Gallery Slider -->
+            <div class="owl-carousel owl-theme gallery_slider">
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_1.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_1.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_2.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_2.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_3.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_3.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_4.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_4.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_5.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_5.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_6.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_6.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_7.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_7.jpg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_8.jpeg}">
+                        <img th:src="@{Media/Image/Home/gallery_8.jpeg}" alt="">
+                    </a>
+                </div>
+
+                <!-- Gallery Item -->
+                <div class="owl-item gallery_item">
+                    <a class="colorbox" th:href="@{Media/Image/Home/gallery_9.jpg}">
+                        <img th:src="@{Media/Image/Home/gallery_9.jpg}" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <h1 class="text-white"> hello</h1>
+        </div>
+    </div>
+
+
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <div class="newsletter_content">
+            <div class="newsletter_image" th:style="'background-image: url(Media/Image/Home/cloth.jpg); background-repeat:no-repeat; background-size:cover;'"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section_title_container text-center">
+                            <div class="section_subtitle ">only the best</div>
+                            <div class="section_title">subscribe for a 20% discount</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row newsletter_container">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="newsletter_form_container">
+                            <form action="#">
+                                <input type="email" class="newsletter_input" required="required" placeholder="E-mail here">
+                                <button type="submit" class="newsletter_button">subscribe</button>
+                            </form>
+                        </div>
+                        <div class="newsletter_text">You also get news about our exclusive deals and promos.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:replace="common/footer::footer"></div>
+    <div th:replace="common/header::scripts"></div>
+</div>
+</body>
+</html>
